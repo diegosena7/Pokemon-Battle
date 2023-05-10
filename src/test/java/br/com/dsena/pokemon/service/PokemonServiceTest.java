@@ -37,8 +37,6 @@ public class PokemonServiceTest {
                 .challenger("Pikachu")
                 .challenged("Bulbassaur")
                 .build();
-
-        MockitoAnnotations.openMocks(this);
     }
 
     @Test
