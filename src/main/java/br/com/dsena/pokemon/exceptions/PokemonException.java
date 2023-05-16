@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 @Log4j2
-public class PokemonNotFoundException {
+public class PokemonException {
     @ExceptionHandler(value = FeignException.class)
     public ResponseEntity<ErrorMsg> handlePokemonNotFoundException(final FeignException exception) {
 

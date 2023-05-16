@@ -17,12 +17,12 @@ public class PokemonController {
     private PokemonService pokemonService;
 
     @GetMapping("/pokemon/{name}")
-    public ResponseEntity<PokemonResponse> getPokemon(@PathVariable String name) {
+    public ResponseEntity<PokemonResponse> getPokemon(@PathVariable String name) throws Exception {
         return ResponseEntity.ok(pokemonService.getPokemonClient(name));
     }
 
     @PostMapping
-    public ResponseEntity<String> getPokemonWinner(@RequestBody PokemonRequest pokemonRequest) {
+    public ResponseEntity<String> getPokemonWinner(@RequestBody PokemonRequest pokemonRequest) throws Exception {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(pokemonService.getPokemonWinner(pokemonRequest));
     }

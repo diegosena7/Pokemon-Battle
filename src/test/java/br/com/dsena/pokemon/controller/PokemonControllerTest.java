@@ -69,7 +69,7 @@ public class PokemonControllerTest {
     }
 
     @Test
-    public void testGetPokemonSuccess() {
+    public void testGetPokemonSuccess() throws Exception {
         when(service.getPokemonClient("Pikachu")).thenReturn(pokemonResponse);
 
         ResponseEntity<PokemonResponse> responseEntity = controller.getPokemon("Pikachu");
@@ -79,7 +79,7 @@ public class PokemonControllerTest {
     }
 
     @Test
-    public void testgetPokemonWinner() {
+    public void testgetPokemonWinner() throws Exception {
         when(service.getPokemonWinner(pokemonRequest)).thenReturn(asJsonString(pokemonResponse.toString()));
 
         ResponseEntity<String> responseEntity = controller.getPokemonWinner(pokemonRequest);
